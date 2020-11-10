@@ -5,14 +5,14 @@ DEF_ENUM = {'rock': 0, 'paper': 1, 'scissors': 2}
 DEF_ACTIONS = [0, 1, 2] ## possabilities
 DEF_OPPOSITE = {0: 1, 1: 2, 2: 0}
 DEF_LAST_ACTIONS = [0, 0, 0]
-DEF_THRESHOLD = 50 # max memory
+DEF_THRESHOLD = 20 # max memory
 
 import random
 from numpy.random import choice
 
 
 def roulette_agent(observation, configuration):
-    print(observation)
+    global DEF_LAST_ACTIONS
     if observation.step > 0:
         # see the last action
         idx = observation.lastOpponentAction
@@ -22,8 +22,8 @@ def roulette_agent(observation, configuration):
         tmpMax = max(DEF_LAST_ACTIONS)
         tmpProb = [(tmpMax-i) for i in DEF_LAST_ACTIONS]
         # clean memory
-        # if tmpMax > DEF_THRESHOLD:
-        #     DEF_LAST_ACTIONS = [0, 0, 0]
+        if tmpMax > DEF_THRESHOLD:
+            DEF_LAST_ACTIONS = [0, 0, 0]
         tmpSum = sum(tmpProb)
         if tmpSum == 0:
             # same probability

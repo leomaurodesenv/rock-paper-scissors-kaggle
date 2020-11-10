@@ -15,6 +15,8 @@ How can such a simple game with three possible outcomes be anything other than r
 - v0.2: Nice guess - based on the last action.
 - v0.3: Guessing - random based on the last action.
 - v1.1: Roulette - a guess based on the last actions.
+- v1.2: Roulette - a guess based on the last actions, more decimals.
+- v1.3: Roulette - a guess based on the last actions, with threshold.
 
 ---
 ## Also look ~
