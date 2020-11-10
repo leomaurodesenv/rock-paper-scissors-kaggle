@@ -4,18 +4,17 @@ DEF_ENUM = {
     'scissors': 2
 }
 
+DEF_GUESS = {
+    0: 2, # pedra -> tesoura
+    1: 0, # papel -> pedra
+    2: 1  # tesoura -> papel
+}
+
 import random
 
-def nash_equilibrium_agent(observation, configuration):
-    return random.randint(0, 2)
-
-
-# def nash_equilibrium_agent(observation, configuration):
-#     return random.randint(0, 2)
-
-
-# def copy_opponent_agent(observation, configuration):
-#     if observation.step > 0:
-#         return observation.lastOpponentAction
-#     else:
-#         return 0
+def nice_guess_agent(observation, configuration):
+    print(observation)
+    if observation.step > 0:
+        return DEF_GUESS[observation.lastOpponentAction]
+    else:
+        return random.randint(0, 2)
