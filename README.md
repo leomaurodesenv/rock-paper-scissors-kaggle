@@ -22,6 +22,7 @@ How can such a simple game with three possible outcomes be anything other than r
 - v3.0: 2D Counter Transaction-Matrix - Infer the next action based on the my previous action.
 - v3.1: 3D Counter Transaction-Matrix - Infer the next action based on the my previous action, and his last action.
 - v4.0: Multi Transaction-Matrix - Combine many transaction-matrix strategies.
+- v4.1: Multi Transaction-Matrix 2 - Combine many strategies.
 
 ---
 ## Local test
